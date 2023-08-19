@@ -5,7 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthController extends GetxController {
   final firebaseAuth = FirebaseAuth.instance;
 
-  String get userId => firebaseAuth.currentUser!.uid;
+  // String get userId => firebaseAuth.currentUser!.uid;
+  String get userId => 'aaaaaa';
 
   Future<void> signIn() async {
     try {

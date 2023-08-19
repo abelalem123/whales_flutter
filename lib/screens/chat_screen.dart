@@ -14,6 +14,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   ChatController get chatController => Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

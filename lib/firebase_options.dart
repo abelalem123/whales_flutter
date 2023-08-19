@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBjqxNiB7ul0hd6ypdzvypUgyGi-krUI0k',
+    appId: '1:1027161794103:web:db66c2103a5c26136841b2',
+    messagingSenderId: '1027161794103',
+    projectId: 'whales-a0b63',
+    authDomain: 'whales-a0b63.firebaseapp.com',
+    storageBucket: 'whales-a0b63.appspot.com',
+    measurementId: 'G-62627BXM0S',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '[ADD YOUR OWN]',
-    appId: '[ADD YOUR OWN]',
-    messagingSenderId: '[ADD YOUR OWN]',
-    projectId: '[ADD YOUR OWN]',
-    storageBucket: '[ADD YOUR OWN]',
+    apiKey: 'AIzaSyD68qSdeGoG9fK32U_OzjVYWiAVS7WCftA',
+    appId: '1:1027161794103:android:d8864f310c72a9dd6841b2',
+    messagingSenderId: '1027161794103',
+    projectId: 'whales-a0b63',
+    storageBucket: 'whales-a0b63.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCXtmIaS2oIQiI2GdBiVd60ym4Fg5XzVas',
+    appId: '1:1027161794103:ios:33d1fb81274c62666841b2',
+    messagingSenderId: '1027161794103',
+    projectId: 'whales-a0b63',
+    storageBucket: 'whales-a0b63.appspot.com',
+    iosClientId: '1027161794103-e1r5419rt328ergkq4jj686joledtker.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterChatApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCXtmIaS2oIQiI2GdBiVd60ym4Fg5XzVas',
+    appId: '1:1027161794103:ios:336bef545dd1a0da6841b2',
+    messagingSenderId: '1027161794103',
+    projectId: 'whales-a0b63',
+    storageBucket: 'whales-a0b63.appspot.com',
+    iosClientId: '1027161794103-sd1kodrhhr9de1dc10v7sober75nq557.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterChatApp.RunnerTests',
   );
 }
